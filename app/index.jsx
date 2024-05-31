@@ -3,6 +3,7 @@ import React from 'react'
 import { Link } from 'expo-router'
 import { StatusBar } from 'expo-status-bar'
 import ImageViewer from '../components/ImageViewer'
+import Button from '../components/Button'
 
 const bg = require('../assets/images/background-image.png')
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
             <View style={styles.imageContainer}>
                 <ImageViewer />
             </View>
+            <Button />
             <Link href={'/profile'} style={{ color: 'red' }}>Go to Profile</Link>
             <StatusBar style='light' backgroundColor='purple' />
         </View>
