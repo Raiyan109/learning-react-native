@@ -14,7 +14,9 @@ const App = () => {
             <View style={styles.imageContainer}>
                 <ImageViewer />
             </View>
-            <Button />
+            <Button label='Choose a photo' />
+            <Button label='Use this photo' />
+
             <Link href={'/profile'} style={{ color: 'red' }}>Go to Profile</Link>
             <StatusBar style='light' backgroundColor='purple' />
         </View>
