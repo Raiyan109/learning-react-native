@@ -1,7 +1,17 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-export default function Button({ label }) {
+export default function Button({ label, theme }) {
+    if (theme === 'primary') {
+        return (
+            <View style={styles.buttonContainer}>
+                <Pressable style={[styles.button, { backgroundColor: 'pink' }]} onPress={() => alert('Button pressed')}>
+                    <Text style={[styles.buttonLabel, { color: 'black' }]}>{label}</Text>
+                </Pressable>
+            </View>
+        )
+    }
+
     return (
         <View style={styles.buttonContainer}>
             <Pressable style={styles.button} onPress={() => alert('Button pressed')}>

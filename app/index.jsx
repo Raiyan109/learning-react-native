@@ -10,11 +10,11 @@ const App = () => {
 
     return (
         <View style={styles.container}>
-            <Text className='text-4xl text-purple-400'>Raiyan Kabir and Habiba </Text>
+            <Text className='text-4xl text-purple-400'>Raiyan Kabir </Text>
             <View style={styles.imageContainer}>
                 <ImageViewer />
             </View>
-            <Button label='Choose a photo' />
+            <Button label='Choose a photo' theme='primary' />
             <Button label='Use this photo' />
 
             <Link href={'/profile'} style={{ color: 'red' }}>Go to Profile</Link>
