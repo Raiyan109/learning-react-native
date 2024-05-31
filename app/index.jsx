@@ -2,6 +2,7 @@ import { Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { Link } from 'expo-router'
 import { StatusBar } from 'expo-status-bar'
+import ImageViewer from '../components/ImageViewer'
 
 const bg = require('../assets/images/background-image.png')
 const App = () => {
@@ -10,10 +11,7 @@ const App = () => {
         <View style={styles.container}>
             <Text className='text-4xl text-purple-400'>Raiyan Kabir and Habiba </Text>
             <View style={styles.imageContainer}>
-                <Image
-                    source={bg}
-                    style={styles.image}
-                />
+                <ImageViewer />
             </View>
             <Link href={'/profile'} style={{ color: 'red' }}>Go to Profile</Link>
             <StatusBar style='light' backgroundColor='purple' />
@@ -35,10 +33,5 @@ const styles = StyleSheet.create({
     imageContainer: {
         flex: 1,
         paddingTop: 58,
-    },
-    image: {
-        width: 320,
-        height: 440,
-        borderRadius: 18,
     },
 }) 
