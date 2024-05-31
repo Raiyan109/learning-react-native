@@ -1,5 +1,5 @@
 import { Image, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'expo-router'
 import { StatusBar } from 'expo-status-bar'
 import ImageViewer from '../components/ImageViewer'
@@ -8,13 +8,15 @@ import * as ImagePicker from 'expo-image-picker'
 
 const bg = require('../assets/images/background-image.png')
 const App = () => {
+    const [selectedImg, setSelectedImg] = useState(null)
     const pickImage = async () => {
         let result = await ImagePicker.launchImageLibraryAsync({
             allowsEditing: true,
             quality: 1
         })
         if (!result.canceled) {
-            console.log(result);
+            // setSelectedImage(result.assets[0].uri);
+            setSelectedImg(result.assets)
         }
         else {
             alert('You have not choose any image!')
@@ -24,7 +26,7 @@ const App = () => {
         <View style={styles.container}>
             <Text className='text-4xl text-purple-400'>Raiyan Kabir </Text>
             <View style={styles.imageContainer}>
-                <ImageViewer />
+                <ImageViewer selectedImg={selectedImg} />
             </View>
             {/* Button for image picker */}
             <Button label='Choose a photo' theme='primary' onPress={pickImage} />
