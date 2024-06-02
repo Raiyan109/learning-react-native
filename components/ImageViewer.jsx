@@ -4,9 +4,9 @@ import React from 'react'
 
 const bg = require('../assets/images/background-image.png')
 
-export default function ImageViewer({ selectedImg }) {
-    // const imageSource = selectedImage  ? { uri: selectedImage } : placeholderImageSource;
-    const imgView = selectedImg ? selectedImg : bg;
+export default function ImageViewer({ selectedImg, bg }) {
+    const imgView = selectedImg ? { uri: selectedImg } : bg;
+    // const imgView = selectedImg ? selectedImg : bg;
     return (
         <View>
             <Image
