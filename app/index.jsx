@@ -1,6 +1,5 @@
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
-import { Link } from 'expo-router'
 import { StatusBar } from 'expo-status-bar'
 import ImageViewer from '../components/ImageViewer'
 import Button from '../components/Button'
@@ -10,6 +9,7 @@ import IconButton from '../components/IconButton'
 import EmojiPicker from '../components/EmojiPicker'
 import EmojiList from '../components/EmojiList'
 import EmojiSticker from '../components/EmojiSticker'
+import { GestureHandlerRootView } from 'react-native-gesture-handler'
 
 const bg = require('../assets/images/background-image.png')
 
@@ -53,8 +53,9 @@ const App = () => {
     const onModalClose = () => {
         setIsModalVisible(false)
     }
+
     return (
-        <View style={styles.container}>
+        <GestureHandlerRootView style={styles.container}>
             <Text className='text-4xl text-purple-400'>Raiyan Kabir </Text>
             <View style={styles.imageContainer}>
                 <ImageViewer selectedImg={selectedImg} bg={bg} />
@@ -82,7 +83,7 @@ const App = () => {
             </EmojiPicker>
             {/* <Link href={'/profile'} style={{ color: 'red' }}>Go to Profile</Link> */}
             <StatusBar style='light' backgroundColor='purple' />
-        </View>
+        </GestureHandlerRootView>
     )
 }
 
